@@ -18,9 +18,9 @@ export default {
   },
   async mounted() {
     const { slug } = this.$route.params;
-    let spec = await fetch(`http://localhost:8764/spec/${slug}`).then(r =>
-      r.json()
-    );
+    let spec = await fetch(
+      `https://forms.api.freshair.org.uk/spec/${slug}`
+    ).then(r => r.json());
     console.log(spec);
     this.slug = slug;
     this.spec = spec.spec;
@@ -28,14 +28,17 @@ export default {
   },
   methods: {
     async sync(data) {
-      let spec = await fetch(`http://localhost:8764/submit/${this.slug}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Auth-Token": localStorage.getItem("token")
-        },
-        body: JSON.stringify(data)
-      }).then(r => r.json());
+      let spec = await fetch(
+        `https://forms.api.freshair.org.uk/submit/${this.slug}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Auth-Token": localStorage.getItem("token")
+          },
+          body: JSON.stringify(data)
+        }
+      ).then(r => r.json());
     }
   },
 
