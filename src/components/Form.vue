@@ -178,9 +178,9 @@ export default {
   min-height: 100vh;
 }
 .card {
-  margin: 80px;
   max-width: 500px;
-  width: 500px;
+  width: calc(100% - 40px);
+  margin: 20px;
 }
 
 .card[disabled] {
@@ -196,7 +196,6 @@ export default {
 }
 #info-bar h1 {
   margin: 0px 20px;
-  line-height: 80px;
   color: white;
   height: 80px;
   display: inline-block;
@@ -204,10 +203,14 @@ export default {
   font-weight: normal;
   font-size: 24px;
   font-family: "Concourse T2";
+  justify-content: center;
+  align-content: center;
+  display: grid;
 }
 
 #info-bar button {
   line-height: 40px;
+
   height: 40px;
   padding: 0px 20px;
   border-radius: 8px;
