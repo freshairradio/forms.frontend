@@ -180,7 +180,7 @@ export default {
 .card {
   max-width: 500px;
   width: calc(100% - 40px);
-  margin: 20px;
+  margin: 80px 20px;
 }
 
 .card[disabled] {
