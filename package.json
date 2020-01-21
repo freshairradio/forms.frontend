@@ -1,0 +1,24 @@
+{
+  "name": "Phantom",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "filepond": "^4.9.4",
+    "filepond-plugin-file-validate-type": "^1.2.4",
+    "filepond-plugin-image-crop": "^2.0.3",
+    "filepond-plugin-image-edit": "^1.6.0",
+    "filepond-plugin-image-exif-orientation": "^1.0.6",
+    "filepond-plugin-image-preview": "^4.6.0",
+    "filepond-plugin-image-resize": "^2.0.4",
+    "filepond-plugin-image-transform": "^3.7.0",
+    "fuse.js": "^3.4.6",
+    "gridsome": "^0.7.0",
+    "luxon": "^1.21.3",
+    "vue-filepond": "^6.0.2",
+    "vuex": "^3.1.2"
+  }
+}
