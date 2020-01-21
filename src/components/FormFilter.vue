@@ -11,11 +11,7 @@
         v-for="item in inflatedSelection"
         :small="true"
       />
-      <Input
-        :text.sync="filter"
-        type="text"
-        placeholder="Start typing to find..."
-      />
+      <Input :text.sync="filter" type="text" placeholder="Start typing to find..." />
       <Item
         :active="selected == item.slug"
         @click.native="() => select(item.slug)"
@@ -27,9 +23,7 @@
       />
     </template>
     <template v-slot:actions>
-      <button @click="next" v-if="selected">
-        {{ cont }}
-      </button>
+      <button @click="next" v-if="selected">{{ cont }}</button>
     </template>
   </Card>
 </template>
@@ -50,7 +44,10 @@ export default {
   data() {
     return {
       selected: this.output || [],
-      filter: ""
+      filter: "",
+      loading: false,
+      error: false,
+      data: []
     };
   },
   methods: {
@@ -64,10 +61,21 @@ export default {
       } else {
         this.selected = [slug, ...this.selected];
       }
+    },
+    async load() {
+      this.loading = true;
+      let data = await fetch(this.input.source, {
+        headers: {
+          "Content-Type": "application/json",
+          "X-Auth-Token": localStorage.getItem("token")
+        }
+      }).then(r => r.json());
+      this.loading = false;
+      this.data = data;
     }
   },
   mounted() {
-    this.$store.dispatch(`${this.input.source}Load`);
+    this.load();
   },
   computed: {
     inflatedSelection() {
@@ -78,15 +86,7 @@ export default {
     cont() {
       return this.input.continue || "Continue";
     },
-    loading() {
-      return this.$store.state[this.input.source].loading;
-    },
-    error() {
-      return this.$store.state[this.input.source].error;
-    },
-    data() {
-      return this.$store.state[this.input.source].data || [];
-    },
+
     filtered() {
       if (!this.data || this.filter.length < 3) {
         return [];
