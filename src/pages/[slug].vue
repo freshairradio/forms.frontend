@@ -10,7 +10,7 @@
 // Import FilePond
 
 import Form from "~/components/Form.vue";
-
+import Card from "~/components/Card.vue";
 export default {
   metaInfo: {
     title: "Freshair Forms"
@@ -50,17 +50,28 @@ export default {
   },
   methods: {
     async sync(data) {
-      let spec = await fetch(
-        `https://forms.api.freshair.org.uk/submit/${this.slug}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-Auth-Token": localStorage.getItem("token")
-          },
-          body: JSON.stringify(data)
+      try {
+        let spec = await fetch(
+          `https://forms.api.freshair.org.uk/submit/${this.slug}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-Auth-Token": localStorage.getItem("token")
+            },
+            body: JSON.stringify(data)
+          }
+        );
+        if (spec.status != 200) {
+          alert(
+            "Something went wrong, please contact webmaster@freshair.org.uk as soon as possible"
+          );
         }
-      ).then(r => r.json());
+      } catch (e) {
+        alert(
+          "Something went wrong, please contact webmaster@freshair.org.uk as soon as possible"
+        );
+      }
     }
   },
 
@@ -69,7 +80,8 @@ export default {
       slug: "",
       spec: null,
       name: "",
-      person_name: null
+      person_name: null,
+      error: false
     };
   }
 };
