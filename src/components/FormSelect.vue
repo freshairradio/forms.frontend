@@ -54,12 +54,14 @@ export default {
   methods: {
     async load() {
       this.loading = true;
-      let data = await fetch(this.input.source, {
-        headers: {
-          "Content-Type": "application/json",
-          "X-Auth-Token": localStorage.getItem("token")
-        }
-      }).then(r => r.json());
+      let data =
+        this.input.data ||
+        (await fetch(this.input.source, {
+          headers: {
+            "Content-Type": "application/json",
+            "X-Auth-Token": localStorage.getItem("token")
+          }
+        }).then(r => r.json()));
       this.loading = false;
       this.data = data;
     },
