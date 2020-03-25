@@ -202,7 +202,6 @@ export default {
   grid-column: 3;
   font-weight: normal;
   font-size: 24px;
-  font-family: "Concourse T2";
   justify-content: center;
   align-content: center;
   display: grid;

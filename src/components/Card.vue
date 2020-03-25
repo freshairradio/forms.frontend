@@ -87,10 +87,10 @@ export default {
   top: calc(50% - 15px);
 }
 .card .error {
-  font-family: "Concourse T2";
   font-size: 21px;
   color: red;
   font-style: italic;
   vertical-align: middle;
+  font-weight: normal;
 }
 </style>

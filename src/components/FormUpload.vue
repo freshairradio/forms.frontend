@@ -69,7 +69,6 @@ export default {
 </script>
 <style>
 .filepond--root {
-  font-family: "Concourse T2";
   cursor: pointer;
 }
 

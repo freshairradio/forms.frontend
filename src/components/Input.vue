@@ -40,7 +40,6 @@ textarea {
   color: black;
   margin: 10px 0px;
   width: calc(100% - 16px);
-  font-family: "Concourse T2";
   font-size: 21px;
 }
 textarea {
