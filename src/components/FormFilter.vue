@@ -11,7 +11,11 @@
         v-for="item in inflatedSelection"
         :small="true"
       />
-      <Input :text.sync="filter" type="text" placeholder="Start typing to find..." />
+      <Input
+        :text.sync="filter"
+        type="text"
+        placeholder="Start typing to find..."
+      />
       <Item
         :active="selected == item.slug"
         @click.native="() => select(item.slug)"
@@ -64,12 +68,14 @@ export default {
     },
     async load() {
       this.loading = true;
-      let data = await fetch(this.input.source, {
-        headers: {
-          "Content-Type": "application/json",
-          "X-Auth-Token": localStorage.getItem("token")
-        }
-      }).then(r => r.json());
+      let data =
+        this.input.data ||
+        (await fetch(this.input.source, {
+          headers: {
+            "Content-Type": "application/json",
+            "X-Auth-Token": localStorage.getItem("token")
+          }
+        }).then(r => r.json()));
       this.loading = false;
       this.data = data;
     }
