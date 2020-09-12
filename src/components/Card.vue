@@ -6,7 +6,7 @@
         <span class="error" v-if="error">{{ error }}</span>
       </h2>
     </div>
-    <div class="content" :style="{ 'padding-top': `${contentPadding || 0}px` }">
+    <div class="content" :style="{ 'padding-top': `10px` }">
       <slot name="content"></slot>
     </div>
 
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  props: ["loading", "title", "error", "contentPadding"]
+  props: ["loading", "title", "error", "contentPadding"],
 };
 </script>
 
@@ -34,19 +34,21 @@ export default {
   padding: 10px 20px 0px 20px;
 }
 .card .content {
-  padding: 0px 20px 0px 20px;
+  padding: 20px 20px 0px 20px;
 }
 .card .actions {
   display: flex;
-  margin-top: 15px;
-  background: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  margin: 15px;
   border-radius: 8px;
 }
 .card .actions button,
 .card .actions .button {
   flex-grow: 1;
   border-radius: 8px;
-  background: transparent;
+  background: linear-gradient(to top right, #23074d, #cc5333);
+  padding: 10px 0px;
+  margin: 5px;
   text-align: center;
 }
 .card .actions button:hover,

@@ -14,7 +14,7 @@ export default {
   props: ["text", "type", "placeholder"],
   data() {
     return {
-      height: 0
+      height: 0,
     };
   },
   methods: {
@@ -24,8 +24,8 @@ export default {
       this.$nextTick(() => {
         this.height = this.$refs.textarea.scrollHeight - 16;
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -38,6 +38,7 @@ textarea {
   border-radius: 4px;
   padding: 8px;
   color: black;
+  outline: none;
   margin: 10px 0px;
   width: calc(100% - 16px);
   font-size: 21px;

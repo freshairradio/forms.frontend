@@ -29,7 +29,7 @@ html {
   padding: 0;
   font-size: 21px;
   line-height: 1.45;
-  background: #faa53a;
+  background: #212121;
 }
 
 h1 {
@@ -39,8 +39,11 @@ h1 {
 }
 h2 {
   margin: 0px;
-  font-size: 24px;
+  margin-top: 10px;
+  font-size: 36px;
+  font-weight: 100;
   color: black;
+  line-height: 1.2;
 }
 h3 {
   margin: 0px;
@@ -78,11 +81,13 @@ button,
 </style>
 <style>
 @import url("https://rsms.me/inter/inter.css");
-html {
+html,
+textarea {
   font-family: "Inter", sans-serif;
 }
 @supports (font-variation-settings: normal) {
-  html {
+  html,
+  textarea {
     font-family: "Inter var", sans-serif;
   }
 }
