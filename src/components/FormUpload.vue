@@ -52,7 +52,7 @@ export default {
 
   methods: {
     next(which) {
-      this.$emit("update:output", this.selected);
+      this.$emit("update:output", this.selected || "");
       this.$emit("next");
     },
     file_uploaded(err, file) {
