@@ -18,7 +18,7 @@
       />
     </template>
     <template v-slot:actions>
-      <button @click="next" v-if="selected">
+      <button @click="next">
         {{ cont }}
       </button>
     </template>
