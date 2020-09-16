@@ -29,7 +29,12 @@ html {
   padding: 0;
   font-size: 21px;
   line-height: 1.45;
-  background: #212121;
+}
+html {
+  background: url("/sambackground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 h1 {
