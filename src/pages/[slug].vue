@@ -22,7 +22,7 @@ export default {
     const { slug } = this.$route.params;
 
     let spec = await fetch(
-      `https://forms.api.freshair.radio/spec/${slug}`
+      `https://forms-api.freshair.radio/spec/${slug}`
     ).then((r) => r.json());
     console.log(spec);
     this.slug = slug;
@@ -33,7 +33,7 @@ export default {
     async sync(data) {
       try {
         let spec = await fetch(
-          `https://forms.api.freshair.radio/submit/${this.slug}`,
+          `https://forms-api.freshair.radio/submit/${this.slug}`,
           {
             method: "POST",
             headers: {
