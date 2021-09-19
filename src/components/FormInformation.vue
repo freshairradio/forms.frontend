@@ -1,7 +1,7 @@
 <template>
   <Card :title="input.title">
     <template v-slot:content>
-      <p v-if="input.body">{{ input.body }}</p>
+      <p v-if="input.body" v-html="input.body"></p>
     </template>
     <template v-slot:actions>
       <button @click="next">{{ cont }}</button>
