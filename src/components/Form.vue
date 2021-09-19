@@ -217,4 +217,9 @@ export default {
   display: inline-block;
   grid-column: 2;
 }
+
+#info-bar button:hover {
+  background: rgb(255, 255, 255, 1);
+  color: black!important;
+}
 </style>

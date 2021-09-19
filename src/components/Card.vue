@@ -46,15 +46,42 @@ export default {
 .card .actions .button {
   flex-grow: 1;
   border-radius: 8px;
-  background: linear-gradient(to top right, #23074d, #cc5333);
   padding: 10px 0px;
   margin: 5px;
+  color: white;
   text-align: center;
+  text-decoration:none;
+  animation: gradient 30s ease infinite;
+  background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-transition: background .5s ease-out;
+  -moz-transition: background .5s ease-out;
+  -o-transition: background .5s ease-out;
+  transition: background .5s ease-out;
+
+  -webkit-transition: color .3s ease-out;
+  -moz-transition: color .3s ease-out;
+  -o-transition: color .3s ease-out;
+  transition: color .3s ease-out;
 }
 .card .actions button:hover,
 .card .actions .button:hover {
-  background: black;
+  background: rgba(104, 104, 104, 0.5);
+  color: black!important;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 .card * {
   opacity: 1;
   transition: opacity 0.2s;

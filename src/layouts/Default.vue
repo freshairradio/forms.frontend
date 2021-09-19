@@ -23,7 +23,23 @@ p:first-of-type {
 p:last-of-type {
   margin-bottom: 0px;
 }
-body,
+body {
+	background: linear-gradient(-45deg, rgba(204, 83, 51, 0.8), #1488cc, #2b32b2, #c31432, rgba(35, 7, 77, 0.8), #240b36,#f12711,#f5af19,#659999,#f4791f,#8360c3,#2ebf91,#009fff,#ec2f4b);
+	background-size: 700% 700%;
+	animation: gradient 100s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 html {
   margin: 0;
   padding: 0;
@@ -31,7 +47,6 @@ html {
   line-height: 1.45;
 }
 html {
-  background: url("/sambackground.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -61,7 +76,7 @@ h3 {
 button,
 .button {
   text-decoration: none;
-  background: black;
+  background: rgba(255, 255, 255, 0.2);
   font-size: 21px;
   border: none;
   border-radius: 200px;
