@@ -9,11 +9,11 @@
 <script>
 // Import FilePond
 
-import Form from "~/components/Form.vue";
-import Card from "~/components/Card.vue";
+import Form from '~/components/Form.vue';
+import Card from '~/components/Card.vue';
 export default {
   metaInfo: {
-    title: "Freshair Forms"
+    title: 'Freshair Forms'
   },
   components: {
     Form
@@ -22,7 +22,7 @@ export default {
     const { slug } = this.$route.params;
 
     let spec = await fetch(
-      `https://forms-api.freshair.radio/spec/${slug}`
+      `https://freshair-forms-api.s.workers.dev/spec/${slug}`
     ).then((r) => r.json());
     console.log(spec);
     this.slug = slug;
@@ -33,31 +33,31 @@ export default {
     async sync(data) {
       try {
         let spec = await fetch(
-          `https://forms-api.freshair.radio/submit/${this.slug}`,
+          `https://freshair-forms-api.s.workers.dev/submit/${this.slug}`,
           {
-            method: "POST",
+            method: 'POST',
             headers: {
-              "Content-Type": "application/json"
+              'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
           }
         );
         if (spec.status != 200) {
           alert(
-            "Something went wrong, please contact webmaster@freshair.radio"
+            'Something went wrong, please contact webmaster@freshair.radio'
           );
         }
       } catch (e) {
-        alert("Something went wrong, please contact webmaster@freshair.radio");
+        alert('Something went wrong, please contact webmaster@freshair.radio');
       }
     }
   },
 
   data() {
     return {
-      slug: "",
+      slug: '',
       spec: null,
-      name: "",
+      name: '',
       person_name: null,
       error: false
     };

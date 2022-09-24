@@ -24,21 +24,39 @@ p:last-of-type {
   margin-bottom: 0px;
 }
 body {
-	background: linear-gradient(-45deg, rgba(204, 83, 51, 0.8), #1488cc, #2b32b2, #c31432, rgba(35, 7, 77, 0.8), #240b36,#f12711,#f5af19,#659999,#f4791f,#8360c3,#2ebf91,#009fff,#ec2f4b);
-	background-size: 700% 700%;
-	animation: gradient 100s ease infinite;
+  background: linear-gradient(
+    -45deg,
+    rgba(204, 83, 51, 0.8),
+    #1488cc,
+    #2b32b2,
+    #c31432,
+    rgba(35, 7, 77, 0.8),
+    #240b36,
+    #f12711,
+    #f5af19,
+    #659999,
+    #f4791f,
+    #8360c3,
+    #2ebf91,
+    #009fff,
+    #ec2f4b
+  );
+  background-size: 700% 700%;
+  animation: gradient 100s ease infinite;
+  min-height: 100vh;
+  margin: 0px;
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 html {
   margin: 0;
@@ -100,15 +118,15 @@ button,
 }
 </style>
 <style>
-@import url("https://rsms.me/inter/inter.css");
+@import url('https://rsms.me/inter/inter.css');
 html,
 textarea {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 @supports (font-variation-settings: normal) {
   html,
   textarea {
-    font-family: "Inter var", sans-serif;
+    font-family: 'Inter var', sans-serif;
   }
 }
 </style>
